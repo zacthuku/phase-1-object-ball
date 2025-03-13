@@ -116,6 +116,9 @@ function gameObject(){
 
     }
 }
+
+const gameData = gameObject();
+
 function numPointsScored(playerName) {
     let object = gameObject();
    for(let team in object){
@@ -126,9 +129,8 @@ function numPointsScored(playerName) {
     }
     
    }
-   return null;
+   return "Player not found";
   }
-  console.log(numPointsScored("Alan Anderson"));
  
   function shoeSize(playerName) {
     let object = gameObject();
@@ -140,10 +142,9 @@ function numPointsScored(playerName) {
     }
     
    }
-   return null;
+   return "Player not found";
   }
-  console.log(shoeSize("Alan Anderson"));
-
+ 
   function teamColors(teamName){
     let object = gameObject();
    for(let team in object){
@@ -151,9 +152,9 @@ function numPointsScored(playerName) {
         return object[team].colors;
     }
   }
- return null
+ return "Team not found"
 }
-console.log(teamColors("Charlotte Hornets"))
+
 
 function teamNames() {
     let object = gameObject();
@@ -166,7 +167,7 @@ function teamNames() {
     return teams;
 }
 
-console.log(teamNames()); 
+
 
 function playerNumbers(teamName){
     let object= gameObject();
@@ -176,10 +177,10 @@ function playerNumbers(teamName){
         }
     }
     
-    return null;
+    return "Team not found";
     
 }
-console.log(playerNumbers("Charlotte Hornets"));
+
 
 function playerStats(playerName) {
     let object = gameObject();
@@ -190,10 +191,10 @@ function playerStats(playerName) {
         }
     }
     
-    return null; 
+    return "Player not found"; 
 }
 
-console.log(playerStats("Alan Anderson"));
+
 
 function bigShoeRebounds() {
     let object = gameObject();
@@ -214,7 +215,7 @@ function bigShoeRebounds() {
     return rebounds;
 }
 
-console.log(bigShoeRebounds()); 
+
 
 function mostPointsScored() {
     let object = gameObject();
@@ -235,5 +236,14 @@ function mostPointsScored() {
     return topScorer;
 }
 
-console.log(mostPointsScored()); 
+console.log(
+    numPointsScored("Alan Anderson"),
+    shoeSize("Alan Anderson"),
+    teamColors("Charlotte Hornets"),
+    teamNames(),
+    playerNumbers("Charlotte Hornets")
+    ,playerStats("Alan Anderson"),
+    bigShoeRebounds(),
+    mostPointsScored()
+); 
 

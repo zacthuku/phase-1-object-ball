@@ -117,15 +117,13 @@ function gameObject(){
     }
 }
 
-const gameData = gameObject();
+const object = gameObject();
 
 function numPointsScored(playerName) {
-    let object = gameObject();
    for(let team in object){
     if(object[team].players[playerName]){
      return object[team].players[playerName].points;
      
-
     }
     
    }
@@ -133,12 +131,10 @@ function numPointsScored(playerName) {
   }
  
   function shoeSize(playerName) {
-    let object = gameObject();
    for(let team in object){
     if(object[team].players[playerName]){
      return object[team].players[playerName].shoe;
      
-
     }
     
    }
@@ -146,7 +142,6 @@ function numPointsScored(playerName) {
   }
  
   function teamColors(teamName){
-    let object = gameObject();
    for(let team in object){
     if(object[team].teamName ===teamName){
         return object[team].colors;
@@ -157,9 +152,7 @@ function numPointsScored(playerName) {
 
 
 function teamNames() {
-    let object = gameObject();
     let teams = [];
-    
     for (let team in object) {
         teams.push(object[team].teamName);
     }
@@ -170,7 +163,6 @@ function teamNames() {
 
 
 function playerNumbers(teamName){
-    let object= gameObject();
     for(let team in object){
         if (object[team].teamName === teamName) {
             return Object.values(object[team].players).map(player => player.number);
@@ -182,9 +174,7 @@ function playerNumbers(teamName){
 }
 
 
-function playerStats(playerName) {
-    let object = gameObject();
-    
+function playerStats(playerName) { 
     for (let team in object) {
         if (object[team].players[playerName]) {
             return object[team].players[playerName];
@@ -197,7 +187,6 @@ function playerStats(playerName) {
 
 
 function bigShoeRebounds() {
-    let object = gameObject();
     let largestShoeSize = 0;
     let rebounds = 0;
 
@@ -218,7 +207,6 @@ function bigShoeRebounds() {
 
 
 function mostPointsScored() {
-    let object = gameObject();
     let maxPoints = 0;
     let topScorer = "";
 
